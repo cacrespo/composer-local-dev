@@ -1,5 +1,5 @@
 # Short README
-(complete documentation [here](README.md))
+(complete documentation [here](/README.md))
 
 ## Overview
 
