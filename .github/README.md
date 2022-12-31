@@ -35,7 +35,14 @@ gcloud auth login
 ## Install from the source code
 
 1. Clone this repository
-2. In the top-level directory of the cloned repository, run:
+2. Create a virtual enviroment and activate (personal recomendation 😃)
+
+    ```bash
+    python -m venv env
+    source env/bin/activate
+    ```
+
+3. In the top-level directory of the cloned repository, run:
 
     ```bash
     pip install .
