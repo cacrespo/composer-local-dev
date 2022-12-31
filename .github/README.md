@@ -1,4 +1,4 @@
-# Short README
+# Short README.md
 (complete documentation [here](/README.md))
 
 ## Overview
@@ -35,7 +35,7 @@ gcloud auth login
 ## Install from the source code
 
 1. Clone this repository
-2.  In the top-level directory of the cloned repository, run:
+2. In the top-level directory of the cloned repository, run:
 
     ```bash
     pip install .
@@ -63,17 +63,6 @@ from your Composer environment.
 
 To create a local Airflow environment from an existing
 Cloud Composer environment:
-
-```bash
-composer-dev create LOCAL_ENVIRONMENT_NAME \
-    --from-source-environment ENVIRONMENT_NAME \
-    --location LOCATION \
-    --project PROJECT_ID \
-    --port WEB_SERVER_PORT \
-    --dags-path LOCAL_DAGS_PATH
-```
-
-Example:
 
 ```bash
 composer-dev create example-local-environment \
@@ -111,8 +100,6 @@ To stop a local Airflow environment, run:
 composer-dev stop LOCAL_ENVIRONMENT_NAME
 ```
 
-**Note:** The `stop` command does not [delete the local Airflow environment](#delete-a-local-airflow-environment).
-
 ## Add and update DAGs
 
 Dags are stored in the directory that you specified in the `--dags-path`
@@ -123,30 +110,6 @@ directory used by your environment with the
 
 To add and update DAGs, change files in this directory. You do not need to
 restart your local Airflow environment.
-
-## View local Airflow environment logs
-
-You can view recent logs from a Docker container that runs your local Airflow
-environment. In this way, you can monitor container-related events and check
-Airflow logs for errors such as dependency conflicts caused by PyPI packages
-installation.
-
-**Note:** Composer Local Development CLI tool does not write DAG run and task
-logs to files. You can view these logs in the Airflow UI of your local Airflow
-environment.
-
-To view logs from a Docker container that runs your local Airflow environment,
-run:
-
-```bash
-composer-dev logs LOCAL_ENVIRONMENT_NAME --max-lines 10
-```
-
-To follow the log stream, omit the `--max-lines` argument:
-
-```bash
-composer-dev logs LOCAL_ENVIRONMENT_NAME
-```
 
 ### Configure environment variables
 
@@ -168,5 +131,5 @@ AIRFLOW__WEBSERVER__DAG_DEFAULT_VIEW=graph
 To install or remove PyPI packages, modify the `requirements.txt` file in the
 environment directory: `./composer/<local_environment_name>/requirements.txt`.
 
-
-To apply the changes, restart your local Airflow environment.
+---
+To apply these last changes, restart your local Airflow environment.
